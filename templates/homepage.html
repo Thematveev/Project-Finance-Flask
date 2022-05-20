@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style>
+        body{display:flex; align-items:center;justify-content:center;height:100vh;padding:0;margin:0}
+        h2{position:absolute; top:10px; right:10px;color:red;}
+    </style>
+</head>
+<body>
+
+    {% with message = get_flashed_messages() %}
+    <h2>{{message[0]}}</h2>
+    {% endwith %}
+
+    <form action="/" method="post">
+        <label>Login</label> <br>
+        <input type="text" name="login"> <br>
+        <label>Password</label> <br>
+        <input type="text" name="pwd"> <br>
+        <input type="submit" value="Login" name="loginbtn">
+        <input type="submit" value="Register" name="registerbtn">
+    </form>
+</body>
+</html>

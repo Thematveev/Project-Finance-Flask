@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <form action="/dashboard/" method="post">
+        <label>Amount</label><br>
+        <input type="number" name="amount"><br>
+        <label>Comment</label><br>
+        <input type="text" name="comment"><br>
+        <input type="submit" name="submit-income" value="Income">
+        <input type="submit" name="submit-outcome" value="Outcome">
+    </form>
+
+    <hr>
+
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>Comment</th>
+            <th>Date</th>
+        </tr>
+        {% for t in data %}
+
+                <tr style="color:{% if t[5] == 0 %} red {% else %} green {% endif %};">
+                    <td>{{t[3]}}</td>
+                    <td>{{t[4]}}</td>
+                    <td>{{t[2]}}</td>
+                </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <a href="/export/">Export docx</a>
+</body>
+</html>

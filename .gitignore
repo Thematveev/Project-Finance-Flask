@@ -1,0 +1,4 @@
+/.idea
+database.db
+/export_files/*
+*.pyc
