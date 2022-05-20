@@ -6,6 +6,10 @@ class CreateDocument:
 
     def __init__(self, user_id, username, transactions):
         self.d = Document()
+
+        if not os.path.exists(os.getcwd() + '/export_files'):
+            os.mkdir(os.getcwd() + '/export_files')
+
         self.path = os.getcwd() + '/export_files/' + str(user_id) + '.docx'
         self.username = username
 
